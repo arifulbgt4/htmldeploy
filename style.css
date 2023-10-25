@@ -1,0 +1,31 @@
+.bg-color {
+  background-color: bisque;
+}
+
+.bg-nav {
+  background-color: aquamarine;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.j-c-sb {
+  justify-content: space-between;
+}
+
+.w-260 {
+  width: 260px;
+}
+
+.w-300 {
+  width: 300px;
+}
+
+.main-content {
+  padding: 40px;
+}
