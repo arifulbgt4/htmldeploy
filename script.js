@@ -1,31 +1,26 @@
-function GithubAccount(name, email, username) {
-  this.name = name;
-  this.email = email;
-  this.userName = username;
-  this.repo = [];
+class ToDo {
+  constructor() {
+    this.open = [];
+    this.completed = [];
+  }
 
-  this.updateAccount = function (fullName, email) {
-    if (fullName !== undefined) {
-      this.name = fullName;
-    }
-    if (email !== undefined) {
-      this.email = email;
-    }
-  };
+  create(text) {
+    this.open.push(text);
+  }
 
-  this.getRepos = function () {
-    return this.repo;
-  };
-
-  this.createRepo = function (repoName, creator) {
-    const repo = {
-      name: repoName,
-      creator: creator,
-      createAt: Date.now(),
-    };
-
-    this.repo.push(repo);
-  };
+  complete(index) {
+    this.completed.push(this.open[index]);
+    this.open.splice(index, 1);
+  }
 }
 
-const user = new GithubAccount("Ariful islam", "me@email.com", "arifulbgt4");
+const todo = new ToDo();
+
+todo.create("Today i have a class at 9:30pm");
+todo.create("I have a meeting at 11:00pm");
+todo.create("I have a meeting at 12:00pm");
+
+todo.complete(2);
+
+console.log("open: ", todo.open);
+console.log("completed: ", todo.completed);
